@@ -20,6 +20,10 @@ app.use(express.json());
 // parse urlencoded request body
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => res.send("Hello"))
+
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 app.use('/users', userController.getUsers);
 
 mongoose.connect(MONGODB_URI).then(() => {
