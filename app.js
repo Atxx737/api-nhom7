@@ -24,7 +24,7 @@ app.get('/', (req, res) => res.send("Hello"))
 
 app.get('/favicon.ico', (req, res) => res.status(204));
 
-app.use('/users', userController.getUsers);
+app.get('/users', userController.getUsers);
 
 mongoose.connect(MONGODB_URI).then(() => {
     console.log('Mongodb connected!')
